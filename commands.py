@@ -1,4 +1,4 @@
-from telebot import TeleBot
+from telebot import TeleBot, types
 import datetime
 from schedules import *
 
@@ -30,6 +30,15 @@ def is_week_even(date_string):
         return 2
     else:
         return
+
+
+def choose_group(message, bot):
+    markup = types.InlineKeyboardMarkup()
+    kn_11 = types.InlineKeyboardButton('kn_11', callback_data="kn_11")
+    kn_12 = types.InlineKeyboardButton('kn_12', callback_data="kn_12")
+    knai_11 = types.InlineKeyboardButton('knai_11', callback_data="knai_11")
+    markup.row(kn_11, kn_12,knai_11)
+    msg = bot.reply_to(message, "Вибери групу", reply_markup=markup)
 
 
 def get_day_of_week(date, message, bot, group):
