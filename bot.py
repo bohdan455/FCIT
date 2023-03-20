@@ -46,7 +46,6 @@ def Kn_11(message):
         date = message.text.split(" ")
         get_day_of_week(date[1], message, bot, kn_11)
     except:
-        today = datetime.datetime.today()
         get_day_of_week(today.strftime("%d.%m"), message, bot, kn_11)
 
 
@@ -62,7 +61,6 @@ def Kn_12(message):
         date = message.text.split(" ")
         get_day_of_week(date[1], message, bot, kn_12)
     except:
-        today = datetime.datetime.today()
         get_day_of_week(today.strftime("%d.%m"), message, bot, kn_12)
 
 
